@@ -12,8 +12,11 @@ class cardPost extends StatefulWidget {
 class _cardPostState extends State<cardPost> {
   @override
   Widget build(BuildContext context) {
+     var _mediaWidth = MediaQuery.of(context).size.width;
+     var _mediaHeight = MediaQuery.of(context).size.height;
     return Card(
-      elevation: 0,
+    
+      elevation: 1.0,
       margin: EdgeInsets.only(bottom: 10.0),
       child: Padding(
         padding: EdgeInsets.all(8.0),
@@ -21,8 +24,8 @@ class _cardPostState extends State<cardPost> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              width: 80.0,
-              height: 80.0,
+              width: 110.0,
+              height: 120.0,
               decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage('./lib/assets/images/img1.jpg'),
@@ -33,10 +36,11 @@ class _cardPostState extends State<cardPost> {
             SizedBox(
               width: 5.0,
             ),
-            Padding(
-              padding: const EdgeInsets.all(2.0),
-              child: Container(
-                  child: Column(
+            Expanded(
+              
+              child: Padding(
+                padding: const EdgeInsets.all(2.0),
+                child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -45,12 +49,13 @@ class _cardPostState extends State<cardPost> {
                     style: TextStyle(fontSize: 18.0, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
-                    height: 40.0,
+                    height:  _mediaHeight * 0.09,
                   ),
                   Text("Read more...", style: TextStyle(fontSize: 10.0, color: Colors.grey,
                   ),)
                 ],
-              )),
+              ),
+              ),
             )
           ],
         ),

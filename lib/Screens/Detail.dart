@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/Screens/Home.dart';
 
 class DetailScreen extends StatefulWidget {
   @override
@@ -16,7 +17,7 @@ class _DetailScreenState extends State<DetailScreen> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.network("#"),
+                Image.network("https://media.istockphoto.com/photos/photography-camera-lens-concept-picture-id922656500?k=20&m=922656500&s=612x612&w=0&h=buqn4KK7qm6TPy9EFtM7jSEhKVV7UdkxdLbxEL25UIQ="),
                 SizedBox(
                   height: 10.0,
                 ),
@@ -46,7 +47,10 @@ class _DetailScreenState extends State<DetailScreen> {
                               ),
                               IconButton(onPressed: (){}, icon: Icon(Icons.favorite, color: Colors.grey,))
                             ],
-                          )
+                          ),
+                          Text("The new panel will be similar to the existing panel arrangements and will include a second category for prefabricated all-in-one data centres and modular data centres.The new panel will launch in early 2023 for federal, state and local government agencies.", style: TextStyle(
+                           fontSize: 14.0
+                          ), )
                         ],
                   ),)
               ],
@@ -56,7 +60,10 @@ class _DetailScreenState extends State<DetailScreen> {
             padding: EdgeInsets.only(top: 12.0),
             child: IconButton(
                 onPressed: () {
-                  Navigator.pop(context);
+                 Navigator.push(
+                                context,
+            MaterialPageRoute(builder: (context) =>  HomeScreen()),
+        );
                 },
                 icon: Icon(
                   Icons.arrow_back,
