@@ -9,10 +9,12 @@ import 'package:newsapp/models/Article.dart';
 class NewsApi {
   final endPointUrl =
       "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=42503f15036c470a965d0d550779e796";
+
+  NewsApi.fromJson(data);
   Future<List<Articles>> getArticle() async {
     var res = await get(Uri.parse(endPointUrl));
     var data = jsonDecode(res.body);
-    // print(data);
+    print(data);
 
 //     print(jsonDecode(res.body));
 

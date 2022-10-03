@@ -1,3 +1,4 @@
+import 'ApiTesting.dart';
 import 'package:flutter/material.dart';
 import 'package:newsapp/Api.dart';
 import 'package:newsapp/Components/drawer.dart';
@@ -24,7 +25,7 @@ class _HomeScreenState extends State<HomeScreen> {
     super.initState();
     // getArticl().then((value) {
   }
-  NewsApi client = NewsApi();
+  // NewsApi client = NewsApi();
   Widget build(BuildContext context) {
     var _mediaQueryWidth = MediaQuery.of(context).size.width;
     var _mediaQueryHeight = MediaQuery.of(context).size.height;
@@ -113,21 +114,7 @@ class _HomeScreenState extends State<HomeScreen> {
               HeadingBox(),
               DetailScreen(),
               Center(
-                child: FutureBuilder(
-        future: client.getArticle(),
-        builder:
-            (BuildContext context, AsyncSnapshot<List<Articles>> snapshot) {
-          if (snapshot.hasData) {
-            List<Articles>? articles = snapshot.data;
-            return ListView.builder(
-                itemCount: articles?.length,
-                itemBuilder: (context, index) => ListTile(
-                  title: Text(articles![index].title),
-                ));
-          }
-        },
-      ),
-   
+                child: TestApi(),
               ),
             ],
           ),
